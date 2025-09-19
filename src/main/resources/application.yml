@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/online_learning
+    username: postgres
+    password: admin123
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always # This tells Spring to run data.sql on every startup
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  secret: K8f2N9mP3qR7sT1uV5xY8zA2bC6dE9fG2hJ5kL8nM1pQ4rS7tU0vW3xZ6yA9bC2e
+  access-token-ttl: 3600000
+
+server:
+  port: 8081
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
